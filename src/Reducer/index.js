@@ -1,35 +1,35 @@
 import {
-  FETCH_USER_FAILURE,
-  FETCH_USER_REQUEST,
-  FETCH_USER_SUCCESS,
-} from "../Action/userTypes";
+  GET_USERS_REQUESTED,
+  GET_USERS_SUCCESS,
+  GET_USERS_FAILED
+} from  "../Action/userTypes";
 
 const initialState = {
+  users: [],
   loading: false,
-  user: [],
-  error: "",
-};
+  error: null,
+}
 
-export const userReducer = (state = initialState, action) => {
+export default function users(state = initialState, action) {
   switch (action.type) {
-    case FETCH_USER_REQUEST:
+    case GET_USERS_REQUESTED:
       return {
         ...state,
         loading: true,
-      };
-    case FETCH_USER_SUCCESS:
+      }
+    case GET_USERS_SUCCESS:
       return {
+        ...state,
         loading: false,
-        user: action.payload,
-        error: "",
-      };
-    case FETCH_USER_FAILURE:
+        users: action.users
+      }
+    case GET_USERS_FAILED:
       return {
+        ...state,
         loading: false,
-        error: action.payload,
-        user: [],
-      };
+        error: action.message,
+      }
     default:
       return state;
   }
-};
+}

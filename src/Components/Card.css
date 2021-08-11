@@ -1,0 +1,15 @@
+.cardBody{
+    margin: 2rem;
+    padding: 1rem;
+    border: 1px solid black;
+    background: rgb(211, 160, 160);
+    line-height: 10px;
+}
+
+.cardTitle{
+    font-size: 17px;
+}
+
+.cardText{
+    font-size: 14px
+}

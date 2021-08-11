@@ -1,9 +1,9 @@
 import React from "react";
-import UserTable from "./Components/userTable";
+import Main from "./Components/Main";
 
-const App = () =>(
+const App = () => (
   <div>
-    <UserTable/>
+    <Main />
   </div>
 );
 
